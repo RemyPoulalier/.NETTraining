@@ -1,16 +1,20 @@
 ﻿namespace CSharpDiscovery
 {
+    using System;
     using NFluent;
     using NUnit.Framework;
 
     [TestFixture]
     public class ValueTypesTests
     {
-        //[Test]
-        //public void CreateAnEnumForCurrency()
-        //{
-        //    Check.That(euro.ToString()).Equals("Euro");
-        //}
+        public enum monnaie { Euro=1, Yen=2,Dollar=3 };
+
+        [Test]
+        public void CreateAnEnumForCurrency()
+        {
+            Enum euro = monnaie.Euro;
+            Check.That(euro.ToString()).Equals("Euro");
+        }
 
         //[Test]
         //public void SpecifyIntegerValueAndCastIntegerValueToCurrencyEnum()
