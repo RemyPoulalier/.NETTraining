@@ -7,35 +7,47 @@ namespace CSharpDiscovery
     [TestFixture]
     public class TypesTests
     {
-        //[Test]
-        //public void NFluentAndNUnitAreWorking()
-        //{
-        //    Check.That(true).IsTrue();
-        //}
+        private int integer; 
+        private string integerAsAString;
+        private float integerAsAFloat;
+        private double integerAsADouble;
+        private Decimal integerAsADecimal;
 
-        //[Test]
-        //public void AnIntIsNotEqualToSameIntStringRepresentation()
-        //{
-        //    Check.That(integerAsAString).Not.Equals(integer);
-        //}
+        [Test]
+        public void NFluentAndNUnitAreWorking()
+        {
+            Check.That(true).IsTrue();
+        }
 
-        //[Test]
-        //public void AnIntIsNotEqualToSameIntAsFloat()
-        //{
-        //    Check.That(integerAsAFloat).Not.Equals(integer);
-        //}
+        [Test]
+        public void AnIntIsNotEqualToSameIntStringRepresentation()
+        {
+            this.integer = 17;
+            this.integerAsAString = Convert.ToString(integer);
 
-        //[Test]
-        //public void AnIntIsNotEqualToSameIntAsDouble()
-        //{
-        //    Check.That(integerAsADouble).Not.Equals(integer);
-        //}
+            Check.That(integerAsAString).Not.Equals(integer);
+        }
 
-        //[Test]
-        //public void AnIntIsNotEqualToSameIntAsDecimal()
-        //{
-        //    Check.That(integerAsADecimal).Not.Equals(integer);
-        //}
+        [Test]
+        public void AnIntIsNotEqualToSameIntAsFloat()
+        {
+            this.integerAsAFloat = (float) integer;
+            Check.That(integerAsAFloat).Not.Equals(integer);
+        }
+
+        [Test]
+        public void AnIntIsNotEqualToSameIntAsDouble()
+        {
+            this.integerAsADouble = (double)integer;
+            Check.That(integerAsADouble).Not.Equals(integer);
+        }
+
+        [Test]
+        public void AnIntIsNotEqualToSameIntAsDecimal()
+        {
+            this.integerAsADecimal = (decimal) this.integer;
+            Check.That(integerAsADecimal).Not.Equals(integer);
+        }
 
         //[Test]
         //public void AnIntIsNotEqualToSameIntAsLong()
@@ -72,7 +84,7 @@ namespace CSharpDiscovery
         //{
         //    string integerString = "30";
         //    int expectedInteger = 30;
-            
+
         //    Check.That(integerParsed).Equals(expectedInteger);
         //}
 
@@ -105,7 +117,7 @@ namespace CSharpDiscovery
         //public void NullableIntWithNullValueDoesNotHaveValue()
         //{
         //    // use "int?" to declare a nullable int initialized with null, then try also with Nullable<int>
-            
+
         //    Check.That(nullableInteger.HasValue).IsFalse();
         //}
 
@@ -120,7 +132,7 @@ namespace CSharpDiscovery
         //public void NullableIntWithNullValueDoesNotHaveValue()
         //{
         //    // use "int?" to declare a nullable int initialized with 30
-            
+
         //    Check.That(nullableInteger.Value).Equals(30);
         //}
     }

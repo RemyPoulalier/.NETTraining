@@ -10,7 +10,7 @@ namespace CSharpDiscovery
         //[Test]
         //public void DeclareAOneDimensionArrayNotInitialized()
         //{
-        //    // use int[] as type to declare an integer array initialized to null
+        //    use int[] as type to declare an integer array initialized to null
         //    Check.That(integerArray).IsNull();
         //}
 
