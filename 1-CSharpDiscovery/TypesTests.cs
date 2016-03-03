@@ -117,8 +117,8 @@ namespace CSharpDiscovery
         [Test]
         public void UseVarForLessVerbosityButKeepStrongTyping()
         {
-            var IntegerAsAString = this.integer.ToString();
-            Check.That(integerAsAString).Not.Equals(integer);
+            var wIntegerAsAString = this.integer.ToString();
+            Check.That(wIntegerAsAString).Not.Equals(integer);
         }
 
         [Test]
